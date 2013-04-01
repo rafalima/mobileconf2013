@@ -28,4 +28,3 @@ class Integracao():
         self.vc.findViewWithAttributeOrRaise("content-desc","Stop").touch()    
     
         self.vc.dump(2)
-        
