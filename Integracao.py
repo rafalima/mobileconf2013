@@ -29,4 +29,4 @@ class Integracao():
     
     
         #clicar no stop
-        #volta pro teste e checa se est‡ na tela da aplicacao e recheca o resultado
+        #volta pro teste e checa se esta na tela da aplicacao e recheca o resultado
