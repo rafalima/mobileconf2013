@@ -39,3 +39,18 @@ class Calculadora_Pagina_Principal():
         self.util.trocar_aplicacao("AndroidCalculator")
         self.vc.dump(1)
         self.device.press("KEYCODE_BACK", self.device.DOWN_AND_UP)
+        
+        
+    def inicia_calculadora(self):
+        
+        self.device.press("KEYCODE_HOME", self.device.DOWN_AND_UP)
+        
+        self.vc.dump()
+        
+        self.vc.findViewWithAttributeOrRaise("content-desc","Apps").touch()
+        
+        self.vc.dump()
+        
+        self.vc.findViewWithTextOrRaise("AndroidCalculator").touch()
+        
+        self.vc.dump()

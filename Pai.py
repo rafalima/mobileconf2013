@@ -23,12 +23,10 @@ class Pai(unittest.TestCase):
         if self.device != None:
             print"Device found..."    
         self.runAndroidCalculator()
+        self.vc = ViewClient(self.device,serialno=self.serialno)
         
     def tearDown(self):
-        pass
-#         self.runAndroidCalculator()
-#         self.device.press("KEYCODE_BACK", self.device.DOWN_AND_UP)
-#         
+        pass      
         
         
     def runAndroidCalculator(self):
@@ -40,7 +38,5 @@ class Pai(unittest.TestCase):
             print "myapp not installed, installing APKs..."
             self.device.installPackage('/Users/rlima/Documents/workspace/eclipse/MRTest/apk/Main.apk')
         
-        print "launching myapp..."
-        self.device.startActivity(component='com.calculator/.Main')
-        
-        self.vc = ViewClient(self.device,serialno=self.serialno)
+#         print "launching myapp..."
+#         self.device.startActivity(component='com.calculator/.Main')

@@ -22,26 +22,40 @@ from com.dtmilano.android.viewclient import ViewClient, View
 from Pai import Pai
 from calculadora_pagina_principal import Calculadora_Pagina_Principal
 from Integracao import Integracao
-
+from relogio import Relogio
 
 from com.android.monkeyrunner import MonkeyRunner
 
 class Testes(Pai):
     
+    
+#     def calculo(self):
     def test_calculo(self):
-        principal = Calculadora_Pagina_Principal(self.vc,self.device)
+        calculadora = Calculadora_Pagina_Principal(self.vc,self.device)
+        calculadora.inicia_calculadora()
+        
+        
         integracao = Integracao(self.vc,self.device)
         
-        primeiro_numero = 1
-        segundo_numero = 10
+        primeiro_numero = 11
+        segundo_numero = 23
         
-        multiplicacao = principal.multiplicacao(primeiro_numero,segundo_numero)
-        self.assertTrue(principal.checar_resultado(multiplicacao))
+        multiplicacao = calculadora.multiplicacao(primeiro_numero,segundo_numero)
+        self.assertTrue(calculadora.checar_resultado(multiplicacao))
         
         integracao.calculadora_cronometro(multiplicacao)
         
+    def um(self):
+#     def test(self):
+        relogio = Relogio(self.vc,self.device)
+        tempo = ["5","1"]
+        
+        relogio.inicia_cronometro(tempo)
+        
+        
 
     def tearDown(self):
+#         pass
         Calculadora_Pagina_Principal(self.vc,self.device).fechando_calculadora()
         
         
