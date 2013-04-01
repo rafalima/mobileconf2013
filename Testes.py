@@ -31,7 +31,7 @@ class Testes(Pai):
         integracao.calculadora_cronometro()
         
         self.assertTrue(calculadora.checar_titulo)
-        self.assertTrue(calculadora.checar_resultado(multiplicacao))        
+        self.assertTrue(calculadora.checar_resultado(multiplicacao))
         
 
     def tearDown(self):
