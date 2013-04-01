@@ -4,10 +4,11 @@ class Util():
         self.device = device
         self.vc = vc
     
-    
+    #troca aplicacao
+    #aplicacao - 
     def trocar_aplicacao(self,aplicacao):
         self.device.press('KEYCODE_APP_SWITCH', self.device.DOWN_AND_UP)
-        self.vc.dump(1)
+        self.vc.dump()
         self.vc.findViewWithTextOrRaise(aplicacao).touch()
         
         

@@ -1,10 +1,10 @@
 import unittest
-
 # this must be imported before MonkeyRunner and MonkeyDevice,
 # otherwise the import fails
 from com.dtmilano.android.viewclient import ViewClient, View
 
 from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
+import Config
  
 class Pai(unittest.TestCase):
       
@@ -21,22 +21,19 @@ class Pai(unittest.TestCase):
         self.device = MonkeyRunner.waitForConnection()
         self.device.wake()
         if self.device != None:
-            print"Device found..."    
-        self.runAndroidCalculator()
+            print "Dispositivo encontrado..."    
+        self.instala_calculadora()
         self.vc = ViewClient(self.device,serialno=self.serialno)
         
     def tearDown(self):
         pass      
         
         
-    def runAndroidCalculator(self):
-        
-        apk_path = self.device.shell('pm path com.calculator')
-        if apk_path.startswith('package:'):
-            print "myapp already installed."
+    def instala_calculadora(self):
+        caminho_apk = self.device.shell('pm path com.calculator')
+        if caminho_apk.startswith('package:'):
+            print "calculadora instalada."
         else:
-            print "myapp not installed, installing APKs..."
-            self.device.installPackage('/Users/rlima/Documents/workspace/eclipse/MRTest/apk/Main.apk')
-        
-#         print "launching myapp..."
-#         self.device.startActivity(component='com.calculator/.Main')
+            print "calculadora nao instalada, instalando..."
+            configs = Config.ambiente()
+            self.device.installPackage(configs['arquivo_apk'])

@@ -1,6 +1,6 @@
 from Pai import Pai
-from relogio import Relogio
-from calculadora_pagina_principal import Calculadora_Pagina_Principal
+from Relogio import Relogio
+from Util import Util
 
 from com.android.monkeyrunner import MonkeyRunner
 
@@ -12,21 +12,20 @@ class Integracao():
         
         
         
-    def calculadora_cronometro(self,multiplicacao):
+    def calculadora_cronometro(self):
+        util = Util(self.device,self.vc)
         
         relogio = Relogio(self.vc,self.device)            
         
-        relogio.inicia_cronometro(["5","1"])
-        
-#         calculadora = Calculadora_Pagina_Principal(self.vc,self.device)
-#         calculadora.inicia_calculadora()
+        relogio.inicia_cronometro(["3","1"])
 
-#chamar o troca aplicacao
+        util.trocar_aplicacao("AndroidCalculator")
         
-        MonkeyRunner.sleep(50)
+        MonkeyRunner.sleep(25)
         
-        print "saiu"
+        self.vc.dump()
+        
+        self.vc.findViewWithAttributeOrRaise("content-desc","Stop").touch()    
     
-    
-        #clicar no stop
-        #volta pro teste e checa se est‡ na tela da aplicacao e recheca o resultado
+        self.vc.dump(2)
+        
