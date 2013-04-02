@@ -12,21 +12,22 @@ from Integracao import Integracao
 from Relogio import Relogio
 
 
-class Testes(Pai):
+class TestesCalculadora(Pai):
     
+    def setUp(self):
+        super(TestesCalculadora,self).setUp()
+        calculadora = Calculadora(self.vc,self.device)
+        calculadora.instala_calculadora()
     
-    def calculo(self):
-#     def test_calculo(self):
+#     def calculo(self):
+    def test_calculo(self):
         calculadora = Calculadora(self.vc,self.device)
         integracao = Integracao(self.vc,self.device)
-        
-        calculadora.inicia_calculadora()
         
         primeiro_numero = 11
         segundo_numero = 23
         
         multiplicacao = calculadora.multiplicacao(primeiro_numero,segundo_numero)
-        self.assertTrue(calculadora.checar_resultado(multiplicacao))
         
         integracao.calculadora_cronometro()
         
@@ -35,7 +36,6 @@ class Testes(Pai):
         
 
     def tearDown(self):
-#         pass
         Calculadora(self.vc,self.device).fechando_calculadora()
         
         

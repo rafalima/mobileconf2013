@@ -14,19 +14,19 @@ class Relogio():
         
         self.vc.dump()
         
-        self.vc.findViewWithAttributeOrRaise("content-desc","Apps").touch()
+        self.vc.findViewWithAttribute("content-desc","Apps").touch()
         
         self.vc.dump()
         
-        self.vc.findViewWithTextOrRaise("Clock").touch()
+        self.vc.findViewWithText("Clock").touch()
         
         self.vc.dump()
         
-        self.vc.findViewWithAttributeOrRaise("content-desc",aba).touch()
+        self.vc.findViewWithAttribute("content-desc",aba).touch()
         
         self.vc.dump()
         
-        delete = self.vc.findViewWithAttributeOrRaise("content-desc","Delete")
+        delete = self.vc.findViewWithAttribute("content-desc","Delete")
         
         if delete != None:
             delete.touch()
@@ -39,8 +39,8 @@ class Relogio():
         
         self.abre_relogio("Timer")
         
-        for b in tempo:            
-            self.vc.findViewWithTextOrRaise(b).touch()
+        for t in tempo:            
+            self.vc.findViewWithText(t).touch()
             
         
-        self.vc.findViewWithTextOrRaise("Start").touch()
+        self.vc.findViewWithText("Start").touch()

@@ -13,6 +13,7 @@ class Integracao():
         
         
     def calculadora_cronometro(self):
+    
         util = Util(self.device,self.vc)
         
         relogio = Relogio(self.vc,self.device)            
@@ -21,10 +22,10 @@ class Integracao():
 
         util.trocar_aplicacao("AndroidCalculator")
         
-        MonkeyRunner.sleep(25)
+#         MonkeyRunner.sleep(30)
         
-        self.vc.dump()
+        self.vc.dump(-1,30)
         
-        self.vc.findViewWithAttributeOrRaise("content-desc","Stop").touch()    
+        self.vc.findViewWithAttribute("content-desc","Stop").touch()    
     
-        self.vc.dump(2)
+        self.vc.dump()
