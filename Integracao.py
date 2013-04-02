@@ -22,8 +22,6 @@ class Integracao():
 
         util.trocar_aplicacao("AndroidCalculator")
         
-#         MonkeyRunner.sleep(30)
-        
         self.vc.dump(-1,30)
         
         self.vc.findViewWithAttribute("content-desc","Stop").touch()    

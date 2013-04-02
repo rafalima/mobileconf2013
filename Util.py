@@ -12,3 +12,5 @@ class Util():
         self.vc.findViewWithText(aplicacao).touch()
         
         
+        
+        

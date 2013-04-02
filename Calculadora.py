@@ -1,6 +1,7 @@
 import Config
 from Util import Util
 
+
 class Calculadora():
     
     def __init__(self, vc, device):

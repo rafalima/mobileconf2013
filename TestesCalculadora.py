@@ -5,6 +5,8 @@ import Config
 
 Config.importar()
 
+
+
 from com.dtmilano.android.viewclient import ViewClient, View
 from Pai import Pai
 from Calculadora import Calculadora

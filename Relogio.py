@@ -42,5 +42,5 @@ class Relogio():
         for t in tempo:            
             self.vc.findViewWithText(t).touch()
             
-        
         self.vc.findViewWithText("Start").touch()
+        

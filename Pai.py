@@ -6,15 +6,7 @@ from com.dtmilano.android.viewclient import ViewClient, View
 from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
  
 class Pai(unittest.TestCase):
-      
-#     @classmethod
-#     def setUpClass(self):
-#         self.device = MonkeyRunner.waitForConnection()
-#         self.device.wake()
-#         if self.device != None:
-#             print"Device found..."
-        
-       
+          
     def setUp(self):
         self.serialno = "emulator-5554"
         self.device = MonkeyRunner.waitForConnection()
