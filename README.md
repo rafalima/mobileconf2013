@@ -19,6 +19,9 @@ Instalação
 Executando
 ==========
 
+- Tenha um emulador com sdcard já rodando.
+- Rodando os testes:
+
 [CAMINHO_DO_MONKEYRUNNER] [TESTE.py]
 
-ex: ~/SDKs/android-sdk-macosx/tools/monkeyrunner Testes.py
+ex: ~/SDKs/android-sdk-macosx/tools/monkeyrunner TestesCalculadora.py
