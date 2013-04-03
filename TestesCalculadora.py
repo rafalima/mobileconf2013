@@ -8,13 +8,13 @@ Config.importar()
 
 
 from com.dtmilano.android.viewclient import ViewClient, View
-from Pai import Pai
+from TesteBase import TesteBase
 from Calculadora import Calculadora
 from Integracao import Integracao
 from Relogio import Relogio
 
 
-class TestesCalculadora(Pai):
+class TestesCalculadora(TesteBase):
     '''
     Classe responsavel pelos testes da calculadora
     '''

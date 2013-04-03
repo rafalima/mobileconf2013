@@ -5,7 +5,7 @@ from com.dtmilano.android.viewclient import ViewClient, View
 
 from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
  
-class Pai(unittest.TestCase):
+class TesteBase(unittest.TestCase):
     '''
     Classe pai dos testes
     '''

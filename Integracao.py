@@ -34,11 +34,11 @@ class Integracao():
         
         relogio = Relogio(self.vc,self.device)            
         
-        relogio.inicia_cronometro(["3","1"])
+        relogio.inicia_cronometro(["2","1"])
 
         util.trocar_aplicacao("AndroidCalculator")
         
-        self.vc.dump(-1,30)
+        self.vc.dump(-1,20)
         
         self.vc.findViewWithAttribute("content-desc","Stop").touch()    
     
