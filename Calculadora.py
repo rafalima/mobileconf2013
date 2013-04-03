@@ -2,14 +2,32 @@ import Config
 from Util import Util
 
 
-class Calculadora():
+class Calculadora():    
+    '''
+    Calculadora Page Object
+    '''
     
     def __init__(self, vc, device):
+        '''
+        Construtor
+        
+        @type vc: ViewClient
+        @param vc: instancia do viewclient
+        
+        @type device: MonkeyDevice
+        @param device: instancia do monkeyDevice 
+        '''
+        
         self.vc = vc
         self.device = device
         self.util = Util(self.device,self.vc)
                 
+                
     def instala_calculadora(self):
+        '''
+        Instala a calculadora caso ja nao esteja instalada
+        '''
+        
         caminho_apk = self.device.shell('pm path com.calculator')
         if caminho_apk.startswith('package:'):
             print "calculadora instalada."
@@ -18,7 +36,11 @@ class Calculadora():
             configs = Config.ambiente()
             self.device.installPackage(configs['arquivo_apk'])
             
+            
     def inicia_calculadora(self):
+        '''
+        Inicia a calculadora
+        '''
         
         self.device.press("KEYCODE_HOME", self.device.DOWN_AND_UP)
         
@@ -34,6 +56,19 @@ class Calculadora():
         
     
     def multiplicacao(self,primeiro,segundo):
+        '''
+        Executa uma multiplicacao
+        
+        @type primeiro: float
+        @param primeiro: numero a ser inserido no primeiro campo
+        
+        @type segundo: float
+        @param segundo: numero a ser inserido no segundo campo
+        
+        @return: Retorna o resultado da multiplicacao
+        '''
+        
+        
         self.inicia_calculadora()
         
         multiplicacao = primeiro * segundo
@@ -60,6 +95,15 @@ class Calculadora():
         
         
     def checar_resultado(self,multiplicacao):
+        '''
+        Checa se o resultado da multiplicacao eh igual ao da aplicacao
+        
+        @type multiplicacao: float
+        @param multiplicacao: multiplicacao entre os dois numeros inseridos na aplicacao
+        
+        @return: Retorna bool para a checagem do resultado  
+        '''
+        
         self.vc.dump()
          
         resultado = float(self.vc.findViewWithAttribute("content-desc","result").getText())
@@ -68,16 +112,31 @@ class Calculadora():
     
         
     def checar_titulo(self):
+        '''
+        Checa se a aplicacao esta sendo mostrada
+        
+        @return: Retorna bool para a checagem do resultado
+        '''
+        
         titulo = self.vc.findViewWithText("AndroidCalculator")
         return titulo != None
     
     def limpar_campo(self,campo):
+        '''
+        Limpa um campo antes da insercao
+        
+        @type campo: View
+        @param campo: view do campo a ser limpado 
+        '''
         campo.touch()
         for b in range(10):
             self.device.press("DEL",self.device.DOWN_AND_UP)
     
         
     def fechando_calculadora(self):
+        '''
+        Fecha a calculadora
+        '''
         if self.checar_titulo != None:
             self.device.press("KEYCODE_BACK", self.device.DOWN_AND_UP)
         else:        

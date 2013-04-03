@@ -1,19 +1,23 @@
-#define configuracoes do ambiente
-def ambiente():        
-    arquivo_apk="/home/tworker/workspace/monkeyrunner/apk/Main.apk"
+def ambiente():
+    '''
+    Local para setar as mais diversas configuracoes a serem usadas
+    '''        
+    
+    arquivo_apk="/Users/rlima/Documents/workspace/eclipse/MobileConf/apk/Main.apk"
     
     configs = {'arquivo_apk':arquivo_apk}
     
     return configs
 
 
-#responsavel por colocar o android view client no path
 def importar():
+    '''
+    Configuracao do Android View Client. Precisa ser chamado antes de importar o MonkeyRunner e o MonkeyDevice
+    '''
+    
     import sys
     import os
     
-    # this must be imported before MonkeyRunner and MonkeyDevice,
-    # otherwise the import fails
     try:
         for p in os.environ['PYTHONPATH'].split(':'):
             if not p in sys.path:

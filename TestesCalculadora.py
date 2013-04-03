@@ -15,14 +15,24 @@ from Relogio import Relogio
 
 
 class TestesCalculadora(Pai):
+    '''
+    Classe responsavel pelos testes da calculadora
+    '''
     
     def setUp(self):
+        '''
+        Chama o setup do Pai e instala a calculadora
+        '''
         super(TestesCalculadora,self).setUp()
         calculadora = Calculadora(self.vc,self.device)
         calculadora.instala_calculadora()
     
-#     def calculo(self):
-    def test_calculo(self):
+    
+    def test_calculadora_cronometro(self):
+        '''
+        Teste de integracao entre a calculadora e o cronometro
+        '''
+        
         calculadora = Calculadora(self.vc,self.device)
         integracao = Integracao(self.vc,self.device)
         
@@ -38,6 +48,10 @@ class TestesCalculadora(Pai):
         
 
     def tearDown(self):
+        '''
+        Sobrescreve o metodo do Pai e fecha a calculadora
+        '''
+        
         Calculadora(self.vc,self.device).fechando_calculadora()
         
         
