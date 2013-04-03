@@ -19,6 +19,10 @@ Instalação
 Executando
 ==========
 
+- Tenha um emulador com sdcard já rodando.
+- Altere o arquivo Config.py para que aponte para o arquivo Main.apk na sua máquina.
+- Rodando os testes:
+
 [CAMINHO_DO_MONKEYRUNNER] [TESTE.py]
 
-ex: ~/SDKs/android-sdk-macosx/tools/monkeyrunner Testes.py
+ex: ~/SDKs/android-sdk-macosx/tools/monkeyrunner TestesCalculadora.py
