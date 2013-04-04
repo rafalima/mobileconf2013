@@ -1,4 +1,3 @@
-from Pai import Pai
 from Relogio import Relogio
 from Util import Util
 
