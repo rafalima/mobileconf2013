@@ -12,6 +12,7 @@ from TesteBase import TesteBase
 from Calculadora import Calculadora
 from Integracao import Integracao
 from Relogio import Relogio
+from Util import Util
 
 
 class TestesCalculadora(TesteBase):
@@ -24,8 +25,8 @@ class TestesCalculadora(TesteBase):
         Chama o setup do Pai e instala a calculadora
         '''
         super(TestesCalculadora,self).setUp()
-        calculadora = Calculadora(self.vc,self.device)
-        calculadora.instala_calculadora()
+        util = Util (self.device,self.vc)
+        util.instala_calculadora()
     
     
     def test_calculadora_cronometro(self):

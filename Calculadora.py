@@ -21,21 +21,7 @@ class Calculadora():
         self.vc = vc
         self.device = device
         self.util = Util(self.device,self.vc)
-                
-                
-    def instala_calculadora(self):
-        '''
-        Instala a calculadora caso ja nao esteja instalada
-        '''
-        
-        caminho_apk = self.device.shell('pm path com.calculator')
-        if caminho_apk.startswith('package:'):
-            print "calculadora instalada."
-        else:
-            print "calculadora nao instalada, instalando..."
-            configs = Config.ambiente()
-            self.device.installPackage(configs['arquivo_apk'])
-            
+                            
             
     def inicia_calculadora(self):
         '''

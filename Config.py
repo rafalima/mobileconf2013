@@ -12,6 +12,7 @@ def ambiente():
 
 def importar():
     '''
+    @author - Diego Milano
     Configuracao do Android View Client. Precisa ser chamado antes de importar o MonkeyRunner e o MonkeyDevice
     '''
     
