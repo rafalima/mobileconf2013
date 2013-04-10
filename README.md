@@ -1,3 +1,12 @@
+Android Calculator
+============
+[https://github.com/rafalima/androidCalculator](https://github.com/rafalima/androidCalculator)
+
+Robotium tests
+============
+[https://github.com/rafalima/androidCalculatorRobotiumTests](https://github.com/rafalima/androidCalculatorRobotiumTests)
+
+
 monkeyrunner
 ============
 
